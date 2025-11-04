@@ -1,0 +1,19 @@
+extends Node2D
+
+@export var game_state : Game_State
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_left"):
+		game_state.first_choice =+ 1
+		print(game_state.first_choice)
+	elif Input.is_action_just_pressed("ui_right"):
+		game_state.first_choice =-1
+		print(game_state.first_choice)
+	elif Input.is_action_just_pressed("save"):
+		ResourceSaver.save(game_state, "save.tres")
