@@ -16,4 +16,4 @@ func _process(delta: float) -> void:
 		game_state.first_choice =-1
 		print(game_state.first_choice)
 	elif Input.is_action_just_pressed("save"):
-		ResourceSaver.save(game_state, "save.tres")
+		game_state.save()
